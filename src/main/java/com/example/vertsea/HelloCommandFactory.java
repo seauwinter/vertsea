@@ -1,21 +1,21 @@
 package com.example.vertsea;
 
-import io.vertx.core.Vertx;
+import io.vertx.core.spi.launcher.DefaultCommandFactory;
 
 /**
+ * HelloCommandFactory
  * +----------------------------------------------------------------------
  * | 宝讯融通
  * +----------------------------------------------------------------------
  * | Copyright (c)
  * +----------------------------------------------------------------------
- * | Datetime 2022/1/23 14:22
+ * | Datetime 2022/2/11 16:08
  * +----------------------------------------------------------------------
  * | Author: agridata qiuhaidong <qiuhaidong@agridata.org>
  * +----------------------------------------------------------------------
  */
-public class Main {
-  public static void main(String[] args) {
-    Vertx vertx = Vertx.vertx();
-    vertx.deployVerticle(new HttpServerVerticle());
+public class HelloCommandFactory extends DefaultCommandFactory<HelloCommand> {
+  public HelloCommandFactory() {
+    super(HelloCommand.class);
   }
 }
